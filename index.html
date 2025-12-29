@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный сайт</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Погодный прогноз</h1>
+            <p>Узнайте актуальную погоду в любом городе мира</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Введите название города...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="weather-info" id="weatherInfo" style="display: none;">
+            <div class="current-weather">
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span id="temperature">--</span>°C
+                    </div>
+                    <div class="weather-details">
+                        <h2 id="cityName">--</h2>
+                        <p id="weatherDescription">--</p>
+                        <div class="weather-icon">
+                            <i id="weatherIcon" class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="additional-info">
+                    <div class="info-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Видимость</span>
+                        <span id="visibility">-- км</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Влажность</span>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Ветер</span>
+                        <span id="windSpeed">-- м/с</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <span>Ощущается как</span>
+                        <span id="feelsLike">--°C</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <span>Давление</span>
+                        <span id="pressure">-- гПа</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-sun"></i>
+                        <span>УФ-индекс</span>
+                        <span id="uvIndex">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>Прогноз на 5 дней</h3>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Прогноз будет добавлен через JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>Город не найден. Проверьте правильность написания.</p>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Загрузка данных о погоде...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Данные предоставлены OpenWeatherMap API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
